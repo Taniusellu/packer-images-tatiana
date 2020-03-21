@@ -1,14 +1,22 @@
- {   "_commanet1": "Comment here",
 
+{
+    "_comment": "Comment here",
     "builders": [{
       "type": "amazon-ebs",
       "region": "us-east-1",
       "instance_type": "t2.micro",
       "ssh_username": "ec2-user",
+      "ssh_keypair_name": "packer",
+      " ssh_private_key_file": "~/.ssh/id_rsa",
+       
+
+
+
+
+
       "source_ami": "ami-0fc61db8544a617ed",
       "ami_name": "golden_image {{timestamp}}"
     }],
-    "_commanet2": "Comment here",
     "provisioners": [
         {
             "type": "file",
@@ -20,6 +28,10 @@
             "inline":[
                 "sudo yum update -y"
             ]
-        }
-    ]
-}
+        },
+        {
+            "type": "breakpoint",
+            "note": "Wait for you to delete"
+         }
+     ]
+ }
