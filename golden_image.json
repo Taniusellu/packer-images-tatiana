@@ -1,4 +1,5 @@
-{
+ {   "_commanet1": "Comment here",
+
     "builders": [{
       "type": "amazon-ebs",
       "region": "us-east-1",
@@ -7,6 +8,7 @@
       "source_ami": "ami-0fc61db8544a617ed",
       "ami_name": "golden_image {{timestamp}}"
     }],
+    "_commanet2": "Comment here",
     "provisioners": [
         {
             "type": "file",
